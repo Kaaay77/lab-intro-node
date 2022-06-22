@@ -12,15 +12,11 @@ class SortedList {
     
   }
 
-  get(pos) {
-    if (this.pos.length === 0){
+  get(i) {
+    if (this.i.length === 0){
       throw new Error('OutOfBounds');
     }
-    for( let i = 0; i < this.length; i++){
-      if (this.length === pos){
-        return this.items[i];
-      }
-    }
+    return this.items[i];
   }
 
   max() {
@@ -60,7 +56,7 @@ class SortedList {
     if (this.pos.length === 0){
       return 0;
     }
-   let average = this.items.reduce((a,b) => a + b)/ this.items.length;
+   let average = this.items.reduce((a,b) => a - b)/ this.items.length;
     return average
   }
 }
